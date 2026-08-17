@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Math Monster - Fun Math Practice for Kids </title>
+  <title>About Math Monster - MathFacts for Kids</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #6366F1;
-      --primary-dark: #4F46E5;
-      --bg: #F2F5FF;
+      --primary: #4F46E5;
+      --bg: #F8FAFC;
       --card-bg: #FFFFFF;
-      --text-main: #1E1B4B;
-      --text-muted: #585676;
-      --streak: #FF6B35;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --border: #E2E8F0;
     }
 
     * {
@@ -29,179 +28,110 @@
       background-color: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
+      padding: 24px 16px;
     }
 
-    h1, h2, h3 {
-      font-family: 'Bricolage Grotesque', sans-serif;
-    }
-
-    /* Header Navigation */
-    nav {
-      max-width: 1100px;
+    .container {
+      max-width: 800px;
       margin: 0 auto;
-      padding: 24px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--text-main);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    /* Hero Section */
-    .hero {
-      max-width: 1100px;
-      margin: 40px auto 80px;
-      padding: 0 32px;
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-block;
-      background-color: #E0E7FF;
-      color: var(--primary-dark);
-      padding: 6px 16px;
+      background: var(--card-bg);
       border-radius: 20px;
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
     }
 
-    .hero h1 {
-      font-size: 52px;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 20px;
+    .header {
+      margin-bottom: 32px;
+      border-bottom: 2px solid var(--bg);
+      padding-bottom: 24px;
     }
 
-    .hero p {
-      font-size: 20px;
-      color: var(--text-muted);
-      max-width: 650px;
-      margin: 0 auto 32px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #7D5FFF, #5F27CD);
-      color: #FFF;
-      padding: 16px 32px;
-      border-radius: 18px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      box-shadow: 0 8px 20px rgba(95, 39, 205, 0.35);
-      transition: transform 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Monsters Operations Grid */
-    .section-title {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-
-    .monsters-grid {
-      max-width: 1100px;
-      margin: 0 auto 80px;
-      padding: 0 32px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .monster-card {
-      border-radius: 24px;
-      padding: 24px;
-      color: white;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .card-add { background: linear-gradient(135deg, #FFFF6FA9, #E63980); }
-    .card-sub { background: linear-gradient(135deg, #54B3FF, #1A73E8); }
-    .card-mul { background: linear-gradient(135deg, #FFA344, #FF5252); }
-    .card-div { background: linear-gradient(135deg, #49E281, #10AC84); }
-
-    .monster-icon {
-      font-size: 64px;
-      margin-bottom: 12px;
-    }
-
-    .monster-card h3 {
-      font-size: 22px;
+    .header h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 32px;
+      color: var(--primary);
       margin-bottom: 4px;
     }
 
-    .monster-symbol {
-      font-size: 20px;
-      opacity: 0.9;
-    }
-
-    /* Features Section */
-    .features {
-      max-width: 1100px;
-      margin: 0 auto 80px;
-      padding: 0 32px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .feature-card {
-      background-color: var(--card-bg);
-      border-radius: 20px;
-      padding: 32px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    }
-
-    .feature-card h4 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .feature-card p {
+    .header .subtitle {
+      font-size: 18px;
+      font-weight: 500;
       color: var(--text-muted);
-      font-size: 15px;
     }
 
-    /* Footer */
+    .section-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 22px;
+      margin: 28px 0 12px;
+      color: var(--text-main);
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .highlight-box {
+      background: #F1F5F9;
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 20px 0;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .feature-list li {
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+
+    .feature-list strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* App Details Grid */
+    .app-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 2px solid var(--bg);
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-item .label {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .info-item .value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
     footer {
-      border-top: 1px solid rgba(0,0,0,0.05);
-      padding: 40px 32px;
       text-align: center;
+      margin-top: 32px;
       color: var(--text-muted);
       font-size: 14px;
     }
@@ -209,76 +139,98 @@
     footer a {
       color: var(--primary);
       text-decoration: none;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#" class="brand">👾 Math Monster</a>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="privacy.html">Privacy Policy</a>
+  <div class="container">
+    <div class="header">
+      <h1>Math Monster</h1>
+      <div class="subtitle">MathFacts for Kids</div>
     </div>
-  </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="badge">🔥 Keep Your Streak Alive!</div>
-    <h1>Master Math with Friendly Monsters</h1>
-    <p>A fun, interactive arithmetic practice app designed to build speed, confidence, and daily learning habits in young math learners.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.example.mathmonster" class="btn">
-      <span>Get on Google Play</span>
-    </a>
-  </section>
+    <h2 class="section-title">About this app</h2>
+    <p>Math Monster helps elementary school kids master addition, subtraction, multiplication, and division facts quickly and effectively. The app focuses on timed exercises and math drills that ensure children can recall each math fact confidently in just a few seconds.</p>
 
-  <!-- Operations -->
-  <h2 class="section-title">Choose Your Monster Practice</h2>
-  <section class="monsters-grid">
-    <div class="monster-card card-add">
-      <div class="monster-icon">🛸</div>
-      <h3>Addition</h3>
-      <div class="monster-symbol">➕ Space Cadet</div>
+    <div class="highlight-box">
+      This is the ultimate math fact fluency program designed for students in grades K-3 and up.
     </div>
-    <div class="monster-card card-sub">
-      <div class="monster-icon">🦖</div>
-      <h3>Subtraction</h3>
-      <div class="monster-symbol">➖ Dino Squad</div>
-    </div>
-    <div class="monster-card card-mul">
-      <div class="monster-icon">👻</div>
-      <h3>Multiplication</h3>
-      <div class="monster-symbol">✖️ Ghost Master</div>
-    </div>
-    <div class="monster-card card-div">
-      <div class="monster-icon">🐉</div>
-      <h3>Division</h3>
-      <div class="monster-symbol">➗ Dragon Quest</div>
-    </div>
-  </section>
 
-  <!-- Features -->
-  <h2 class="section-title" id="features">Built for Engaged Learning</h2>
-  <section class="features">
-    <div class="feature-card">
-      <h4>🔥 Daily Streaks</h4>
-      <p>Encourages daily practice habits by tracking consecutive practice days with automated reminders.</p>
-    </div>
-    <div class="feature-card">
-      <h4>📊 Detailed Progress</h4>
-      <p>Track accuracy improvements over time across addition, subtraction, multiplication, and division.</p>
-    </div>
-    <div class="feature-card">
-      <h4>🌙 Night & Day Modes</h4>
-      <p>Seamless support for dark mode and light mode so practice is comfortable at any time of day.</p>
-    </div>
-  </section>
+    <h2 class="section-title">🚀 Why Parents & Teachers Choose Math Monster:</h2>
+    <ul class="feature-list">
+      <li>
+        <strong>Complete Fact Coverage</strong>
+        Master all four core operations: addition, subtraction, multiplication, and division. Build automaticity for success in future math homework and tests.
+      </li>
+      <li>
+        <strong>Targeted Fluency</strong>
+        The app focuses on timed exercises that reinforce memorization and retrieval speed, essential for mental math skills.
+      </li>
+      <li>
+        <strong>Adaptive Learning</strong>
+        Math Monster uses personalized practice that adapts to each child’s level, reinforcing weak facts until they are fully mastered.
+      </li>
+      <li>
+        <strong>Times Table Mastery</strong>
+        Dedicated sections for mastering times tables up to 12. Ideal for 3rd grade and 4th grade students needing speed practice.
+      </li>
+    </ul>
 
-  <!-- Footer -->
+    <h2 class="section-title">✨ Simple, Safe, and Effective:</h2>
+    <p>Simple, clear, and distraction-free, Math Monster keeps children focused on improving their math skills. It’s the best way to practice math facts!</p>
+
+    <ul class="feature-list">
+      <li>
+        <strong>No Sign-Up or Accounts</strong>
+        No personal information is required. Your child can start practicing immediately and safely.
+      </li>
+      <li>
+        <strong>Trackable Progress</strong>
+        Monitor speed and accuracy daily to celebrate mastery and build a strong foundation in core math skills.
+      </li>
+    </ul>
+
+    <!-- Info Matrix -->
+    <div class="app-info-grid">
+      <div class="info-item">
+        <span class="label">Version</span>
+        <span class="value">1.4.1</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Updated on</span>
+        <span class="value">Jul 20, 2026</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Requires Android</span>
+        <span class="value">7.0 and up</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Downloads</span>
+        <span class="value">100+ downloads</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Content rating</span>
+        <span class="value">Everyone</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Permissions</span>
+        <span class="value">View details</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Released on</span>
+        <span class="value">Dec 10, 2025</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Offered by</span>
+        <span class="value">mmkm3719</span>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    <p>&copy; 2026 Math Monster. All rights reserved.</p>
-    <p><a href="privacy.html">Privacy Policy</a> | Hosted on GitHub Pages</p>
+    <p><a href="https://mmkm3719.github.io/MathMonster/index.html">Privacy Policy</a> | &copy; 2026 Math Monster</p>
   </footer>
 
 </body>
